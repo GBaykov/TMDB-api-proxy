@@ -6,12 +6,11 @@ const needle = require("needle");
 const app = new express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors());
-
 const API_URL = process.env.API_URL;
 const API_KEY_VARIABLE = process.env.API_KEY_VARIABLE;
 const API_KEY_VALUE = process.env.API_KEY_VALUE;
 
+app.use(cors());
 app.get(`/movie/:id`, async (req, res) => {
   try {
     const params = new URLSearchParams({
